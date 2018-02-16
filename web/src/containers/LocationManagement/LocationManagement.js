@@ -9,15 +9,15 @@ class LocationManagement extends Component {
 	}
 
 	componentDidMount() {
-		this.props.testImg(1);
-		console.log("this.props.img", this.props.img.url);
+		// this.props.testImg(1);
+		// console.log("this.props.img", this.props.img.url);
 	}
 
 	render () {
 		return (
 			<div>
 				<h1>Quản lý địa điểm</h1>
-				<img src="http://localhost:3000/uploads/HN.jpg"
+				<img src="http://localhost:8080/uploads/test/SG.jpg"
 					width='auto'
 					height='200px' />
 			</div>

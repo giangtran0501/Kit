@@ -9,7 +9,6 @@ const errorHandler = require('../middlewares/errorHandler');
 const app = express();
 
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
-console.log(path.join(__dirname, '../uploads'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
