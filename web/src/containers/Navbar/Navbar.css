@@ -1,0 +1,9 @@
+.menuIcon {
+	display: block;
+}
+
+@media screen and (min-width: 768px) {
+	.menuIcon.hide {
+		display: none;
+	}
+}
