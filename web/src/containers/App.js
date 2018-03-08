@@ -10,9 +10,12 @@ import { MuiThemeProvider } from 'material-ui/styles';
 import { demoAction } from '../actions/demoAction';
 import theme from '../configs/theme';
 import Loading from './Loading';
+import Message from './Message';
+import { getAdmin } from '../actions/login';
 
 const Application = ({text}) => (
 	<div>
+		<Message />
 		<Loading />
 		<Switch>
 			<Route exact path="/login" component={Login} />
@@ -30,11 +33,12 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		console.log('App mounted');
-		this.props.demoAction()
-		.then(data => this.setState({
-			text: data.msg
-		}));
+		// console.log('App mounted');
+		// this.props.demoAction()
+		// .then(data => this.setState({
+		// 	text: data.msg
+		// }));
+		this.props.getAdmin();
 	}
 
 	render() {
@@ -49,5 +53,6 @@ class App extends Component {
 }
 
 export default connect(state => ({}), {
-	demoAction
+	demoAction,
+	getAdmin
 })(App);

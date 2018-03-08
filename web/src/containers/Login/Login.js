@@ -7,6 +7,7 @@ import TextInput from '../../components/TextInput';
 import Header from '../../components/Header';
 import { connect } from 'react-redux';
 import { login } from '../../actions/login';
+import { push } from 'react-router-redux';
 
 class Login extends Component {
 	constructor(props) {
@@ -20,11 +21,12 @@ class Login extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	// componentDidMount() {
-	// 	if (this.props.admin.id) {
-	// 		this.props.push('/user');
-	// 	}
-	// }
+	componentDidMount() {
+		console.log('abcxyz', this.props.admin.id);
+		if (this.props.admin.id) {
+			this.props.push('/home');
+		}
+	}
 
 	handleUsername(e) {
 		this.setState({
@@ -83,4 +85,5 @@ export default connect(state => ({
 	admin: state.admin
 }), {
 	login,
+	push
 })(Login);

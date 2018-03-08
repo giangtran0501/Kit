@@ -1,27 +1,14 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import PaperWithPadding from '../../components/PaperWithPadding';
 import './Statistic.css';
-import {Inbox as InboxIcon,
+import {
 	LocationOn as LocationIcon,
 	Book as BookIcon,
 	AirplanemodeActive as TripIcon,
 	SupervisorAccount as UserIcon,
 	ViewList as TypeIcon
 } from 'material-ui-icons';
-import { Typography, Icon } from 'material-ui';
-
-const styles = {
-  largeIcon: {
-    width: 60,
-    height: 60,
-  },
-  large: {
-    width: 60,
-    height: 60
-  },
-};
-
+import { Typography } from 'material-ui';
 
 class Statistic extends Component {
 	constructor(props) {

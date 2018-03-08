@@ -1,21 +1,22 @@
-// import Storage from '../configs/Storage';
+import Storage from '../configs/Storage';
 
 const logout = () => new Promise((resolve, reject) => {
 	const url = `/api/admin/logout`;
-	// Storage.getToken()
-	fetch(url, {
+	Storage.getToken()
+	.then(token => fetch(url, {
 		method: 'GET',
 		headers: new Headers({
-			'Content-Type': 'application/json'
+			'X-Auth-Token': token
 		})
-	})
+	}))
 	.then(response => response.json())
 	.then(response => {
-		// Storage.removeToken();
+		console.log(response);
+		Storage.removeToken();
 		if (response.error) {
 			return reject(response.error);
 		}
-		return resolve(response.msg);
+		return resolve();
 	})
 	.catch(reject);
 });

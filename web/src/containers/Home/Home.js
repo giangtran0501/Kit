@@ -7,7 +7,7 @@ import { responsiveWidth } from '../../constants/values';
 import { 
 	Route, 
 	Switch, 
-	Redirect } from 'react-router-dom';
+} from 'react-router-dom';
 import Statistic from '../Statistic';
 import PlanManagement from '../PlanManagement';
 import LocationManagement from '../LocationManagement';

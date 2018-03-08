@@ -6,7 +6,7 @@ const test = () => new Promise((resolve, reject) => {
 		if (err) {
 			return reject(err);
 		}
-		console.log(datas);
+		console.log(datas[0].name);
 		return resolve(datas);
 	});
 });

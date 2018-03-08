@@ -17,9 +17,10 @@ class LocationManagement extends Component {
 		return (
 			<div>
 				<h1>Quản lý địa điểm</h1>
-				<img src="http://localhost:8080/uploads/test/SG.jpg"
+				<img src="/uploads/test/SG.jpg"
 					width='auto'
-					height='200px' />
+					height='200px' 
+					alt='test'/>
 			</div>
 		)
 	}

@@ -1,3 +1,6 @@
+import adminCvt from '../utils/adminConvert';
+import Storage from '../configs/Storage';
+
 const login = (username, password) => new Promise((resolve, reject) => {
 	const url = '/api/admin/login';
 	fetch(url, {
@@ -8,31 +11,18 @@ const login = (username, password) => new Promise((resolve, reject) => {
 		body: JSON.stringify({ username, password })
 	})
 	.then(response => response.json())
-	// .then(response => {
-	// 	if (response.error) {
-	// 		return reject(response.error);
-	// 	}
-	// 	Storage.setToken(response.token)
-	// 	.then(() => {
-	// 		resolve(adminCvt(response.admin));
-	// 	})
-	// 	.catch(error => {
-	// 		reject(error);
-	// 	});
-	// })
 	.then(response => {
 		if (response.error) {
 			return reject(response.error);
 		}
-		return resolve(response.data);
-	})
-	.catch(reject);
-	
-	// .then(response => {
-	// 	console.log(response.msg);
-	// 	resolve(response.msg);
-	// })
-	// .catch(reject);
+		Storage.setToken(response.token)
+		.then(() => {
+			resolve(adminCvt(response.admin));
+		})
+		.catch(error => {
+			reject(error);
+		});
+	});
 });
 
 export default login;

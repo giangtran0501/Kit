@@ -3,7 +3,11 @@ const mongoose = require('../configs/mongoose');
 const { Schema } = mongoose;
 
 const TestSchema = Schema({
-	name: String
+	name: {
+		type: String,
+		required: true,
+		unique: true
+	}
 });
 
 const Test = mongoose.model('data', TestSchema);

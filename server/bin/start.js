@@ -1,3 +1,4 @@
+global.rootPrefix = process.cwd();
 require('dotenv').load();
 const server = require('../configs/server');
 
